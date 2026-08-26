@@ -1,0 +1,43 @@
+import { createClient } from '@supabase/supabase-js'
+
+// Initialize Supabase client
+const supabase = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+)
+
+// Example function to insert data
+async function insertUserData(userData: {
+  name: string,
+  email: string,
+  age?: number
+}) {
+  try {
+    const { data, error } = await supabase
+      .from('users')  // Replace 'users' with your actual table name
+      .insert(userData)
+      .select()  // Optional: returns the inserted record
+
+    if (error) {
+      console.error('Error inserting data:', error)
+      return null
+    }
+
+    console.log('Inserted data:', data)
+    return data
+  } catch (err) {
+    console.error('Unexpected error:', err)
+    return null
+  }
+}
+
+// Example usage
+async function addNewUser() {
+  const newUser = {
+    name: 'John Doe',
+    email: 'john.doe@example.com',
+    age: 30
+  }
+
+  await insertUserData(newUser)
+}
