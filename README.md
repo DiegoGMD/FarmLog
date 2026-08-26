@@ -1,0 +1,2 @@
+# FarmLog
+FarmLog es una aplicación móvil diseñada para ayudar a los pequeños agricultores en la gestión y registro de sus explotaciones agrícolas. Su objetivo es digitalizar el funcionamiento del libro de explotación, proporcionando una herramienta intuitiva y accesible que optimice la administración de las tareas agrícolas, garantizando el cumplimiento de normativas y mejorando la trazabilidad de las actividades en el campo.
